@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espaço Márcia Baltazar</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #4a2938;
+    }
+
+    header {
+      background: linear-gradient(135deg, #e86b9c, #f5c95d);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .logo {
+      width: 85px;
+      height: 85px;
+      margin: auto;
+      border-radius: 50%;
+      background: white;
+      color: #c89b25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      border: 3px solid #d4af37;
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-family: Georgia, serif;
+      font-size: 28px;
+    }
+
+    .cidade {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(180, 80, 120, 0.12);
+      border: 1px solid #f0d2df;
+    }
+
+    .card h2 {
+      font-family: Georgia, serif;
+      color: #c28b19;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      line-height: 1.6;
+      color: #765765;
+    }
+
+    .botao {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 16px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(90deg, #e35b91, #c99b27);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .servico {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin-top: 10px;
+      background: #fff4f8;
+      border-radius: 14px;
+    }
+
+    .servico span {
+      color: #b48a1c;
+      font-weight: bold;
+    }
+
+    #agendamento {
+      display: none;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #e2c4d1;
+      border-radius: 12px;
+      font-size: 15px;
+      background: white;
+    }
+
+    .voltar {
+      background: #f5e1ea;
+      color: #8e4265;
+    }
+
+    .aviso {
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #fff8df;
+      border: 1px solid #ead28b;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #9b7d8b;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MB</div>
+
+  <h1>Espaço Márcia Baltazar</h1>
+
+  <div class="cidade">
+    Nail Designer • Apicum-Açu - MA
+  </div>
+</header>
+
+<main id="inicio">
+
+  <div class="card">
+    <h2>Seu momento de beleza 💅</h2>
+
+    <p>
+      Cuide das suas unhas com carinho e escolha o melhor horário
+      para o seu atendimento.
+    </p>
+
+    <button class="botao" onclick="abrirAgendamento()">
+      AGENDAR MEU HORÁRIO
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>Serviços ✨</h2>
+
+    <div class="servico">
+      <b>Alongamento</b>
+      <span>Consultar</span>
+    </div>
+
+    <div class="servico">
+      <b>Unha em gel</b>
+      <span>Consultar</span>
+    </div>
+
+    <div class="servico">
+      <b>Outros serviços</b>
+      <span>Consultar</span>
+    </div>
+  </div>
+
+</main>
+
+
+<main id="agendamento">
+
+  <div class="card">
+
+    <button class="botao voltar" onclick="voltar()">
+      ← VOLTAR
+    </button>
+
+    <h2 style="margin-top:20px;">
+      Agendar horário 💅
+    </h2>
+
+    <label>Escolha o serviço</label>
+
+    <select id="servico">
+      <option>Alongamento</option>
+      <option>Unha em gel</option>
+      <option>Outro serviço</option>
+    </select>
+
+
+    <label>Escolha a data</label>
+
+    <input type="date" id="data">
+
+
+    <label>Escolha o horário</label>
+
+    <select id="horario">
+      <option>07:00</option>
+      <option>08:00</option>
+      <option>09:00</option>
+      <option>10:00</option>
+      <option>11:00</option>
+      <option>12:00</option>
+      <option>13:00</option>
+      <option>14:00</option>
+      <option>15:00</option>
+      <option>16:00</option>
+      <option>17:00</option>
+      <option>18:00</option>
+      <option>19:00</option>
+    </select>
+
+
+    <label>Seu nome</label>
+
+    <input
+      type="text"
+      id="nome"
+      placeholder="Digite seu nome"
+    >
+
+
+    <label>Seu WhatsApp</label>
+
+    <input
+      type="tel"
+      id="whatsapp"
+      placeholder="(98) 99999-9999"
+    >
+
+
+    <div class="aviso">
+      📲 Depois da confirmação, o agendamento poderá ser
+      enviado diretamente para o WhatsApp da Márcia.
+    </div>
+
+
+    <button class="botao" onclick="confirmar()">
+      CONFIRMAR AGENDAMENTO
+    </button>
+
+  </div>
+
+</main>
+
+
+<footer>
+  © Espaço Márcia Baltazar 💗
+</footer>
+
+
+<script>
+
+function abrirAgendamento() {
+
+  document.getElementById("inicio").style.display = "none";
+
+  document.getElementById("agendamento").style.display = "block";
+
+  window.scrollTo(0, 0);
+
+}
+
+
+function voltar() {
+
+  document.getElementById("agendamento").style.display = "none";
+
+  document.getElementById("inicio").style.display = "block";
+
+  window.scrollTo(0, 0);
+
+}
+
+
+function confirmar() {
+
+  const servico =
+    document.getElementById("servico").value;
+
+  const data =
+    document.getElementById("data").value;
+
+  const horario =
+    document.getElementById("horario").value;
+
+  const nome =
+    document.getElementById("nome").value;
+
+  const whatsapp =
+    document.getElementById("whatsapp").value;
+
+
+  if (!data || !nome || !whatsapp) {
+
+    alert(
+      "Por favor, preencha a data, seu nome e seu WhatsApp."
+    );
+
+    return;
+
+  }
+
+
+  alert(
+    "Agendamento preenchido com sucesso! 💅\n\n" +
+    "Serviço: " + servico + "\n" +
+    "Data: " + data + "\n" +
+    "Horário: " + horario + "\n" +
+    "Cliente: " + nome
+  );
+
+}
+
+</script>
+
+</body>
+</html>
